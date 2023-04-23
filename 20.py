@@ -13,6 +13,8 @@ letters_english = ['A', 'E', 'I', 'O', 'U', 'L', 'N', 'S', 'T', 'R', 'D', 'G', '
 points_english  = [ 1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   2,   2,   3,   3,   3,   3,   4,   4,   4,   4,   4,   5,   8,   8,   10,  10]
 letters_russian = ['А', 'В', 'Е', 'И', 'Н', 'О', 'Р', 'С', 'Т', 'Д', 'К', 'Л', 'М', 'П', 'У', 'Б', 'Г', 'Ё', 'Ь', 'Я', 'Й', 'Ы', 'Ж', 'З', 'Х', 'Ц', 'Ч', 'Ш', 'Э', 'Ю', 'Ф', 'Щ', 'Ъ']
 points_russian  = [ 1,   1,   1,   1,   1,   1,   1,   1,   1,   2,   2,   2,   2,   2,   2,   3,   3,   3,   3,   3,   4,   4,   5,   5,   5,   5,   5,   8,   8,   8,   10,  10,  10]
+
+
 letters = letters_english + letters_russian
 points = points_english + points_russian
 word = input("Введите слово: ").upper()
@@ -20,7 +22,9 @@ word_list = list(word)
 index = 0
 sum = 0
 for char in letters:
-    index += 1
     for i in range(len(word_list)):
-        if(word_list[i] == char): sum = sum + points[index]
+        if(word_list[i] == char): 
+            # print(word_list[i],points[index])
+            sum = sum + points[index]
+    index += 1
 print(f"Слово {word} имеет {sum} очков")
